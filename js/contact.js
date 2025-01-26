@@ -1,5 +1,5 @@
 // API URL based on environment
-const API_URL = window.location.hostname === 'rajkoli145.github.io' 
+const API_URL = window.location.hostname.includes('github.io') 
     ? 'https://portfolio1-b7i9.onrender.com'  // Render.com backend URL
     : 'http://localhost:3000';
 
