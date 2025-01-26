@@ -8,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://rajkoli145.github.io', 'https://portfolio1-b7i9.onrender.com'],
+    origin: ['http://localhost:3000', 'https://rajkoli145.github.io', 'https://portfolio-backend-s2ws.onrender.com'],
     methods: ['GET', 'POST'],
     credentials: true,
     allowedHeaders: ['Content-Type', 'Accept']
