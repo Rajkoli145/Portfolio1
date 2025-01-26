@@ -7,14 +7,14 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://rajkoli145.github.io', 'https://portfolio-backend-s2ws.onrender.com'],
-    methods: ['GET', 'POST'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Accept']
-}));
+app.use(cors()); // Allow all origins during development
 app.use(express.json());
 app.use(express.static(__dirname)); // Serve files from root directory
+
+// Add a test route
+app.get('/test', (req, res) => {
+    res.json({ message: 'Backend is working!' });
+});
 
 // MongoDB connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/portfolio';

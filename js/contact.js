@@ -17,14 +17,22 @@ async function handleSubmit(event) {
     });
     
     console.log('Form data:', formObject);
+    console.log('Sending to URL:', API_URL);
     
     try {
-        console.log('Sending request to:', `${API_URL}/api/contact`);
+        // First, test the backend connection
+        const testResponse = await fetch(`${API_URL}/test`);
+        console.log('Test response:', testResponse);
+        
+        if (!testResponse.ok) {
+            throw new Error('Backend connection test failed');
+        }
+        
+        // If test passes, send the actual form data
         const response = await fetch(`${API_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
             },
             body: JSON.stringify(formObject)
         });
@@ -40,7 +48,7 @@ async function handleSubmit(event) {
             throw new Error(result.message || 'Error sending message');
         }
     } catch (error) {
-        console.error('Error details:', error);
-        alert('Error sending message: ' + error.message);
+        console.error('Detailed error:', error);
+        alert('Error sending message. Please check the console for details.');
     }
 }
