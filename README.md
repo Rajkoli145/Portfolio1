@@ -1,48 +1,37 @@
 # Portfolio Website
 
-A personal portfolio website with a contact form feature. Built with HTML, CSS, JavaScript, Node.js, and MongoDB.
+A personal portfolio website with contact form functionality.
 
 ## Features
-
 - Responsive design
-- Contact form with backend storage
+- Contact form with MongoDB backend
 - Admin panel to view messages
 - Modern UI/UX
-- Portfolio sections for About, Skills, and Work
+
+## Technologies Used
+- HTML/CSS/JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- GitHub Pages (Frontend)
+- Render.com (Backend)
 
 ## Setup
-
 1. Clone the repository
 ```bash
 git clone https://github.com/Rajkoli145/Portfolio-Website.git
 ```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Start MongoDB
+2. Install dependencies: `npm install`
+3. Set up MongoDB connection
 ```bash
 mongod --dbpath ~/data/db
 ```
+4. Start the server: `npm start`
 
-4. Start the server
-```bash
-node server.js
-```
+## Environment Variables
+- `MONGODB_URI`: MongoDB connection string
+- `PORT`: Server port (default: 3000)
 
-5. Visit http://localhost:3000 in your browser
-
-## Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-- Node.js
-- Express.js
-- MongoDB
-
-## Author
-
-Raj Koli
+## Live Demo
+Frontend: https://rajkoli145.github.io/Portfolio1
+Backend: https://portfolio-backend-s2ws.onrender.com
