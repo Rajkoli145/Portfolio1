@@ -1,3 +1,8 @@
+// API URL based on environment
+const API_URL = window.location.hostname === 'rajkoli145.github.io' 
+    ? 'https://portfolio1.onrender.com'  // Render.com backend URL
+    : 'http://localhost:3000';
+
 async function handleSubmit(event) {
     event.preventDefault();
     console.log('Form submission started');
@@ -14,7 +19,7 @@ async function handleSubmit(event) {
     console.log('Form data:', formObject);
     
     try {
-        const response = await fetch('http://localhost:3000/api/contact', {
+        const response = await fetch(`${API_URL}/api/contact`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

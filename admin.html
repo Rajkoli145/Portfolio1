@@ -85,6 +85,11 @@
     </div>
 
     <script>
+        // API URL based on environment
+        const API_URL = window.location.hostname === 'rajkoli145.github.io' 
+            ? 'https://portfolio1-b7i9.onrender.com'  // Replace with your actual deployed backend URL
+            : 'http://localhost:3000';
+
         function formatDate(dateString) {
             const date = new Date(dateString);
             return date.toLocaleString();
@@ -92,7 +97,7 @@
 
         async function loadMessages() {
             try {
-                const response = await fetch('http://localhost:3000/api/messages');
+                const response = await fetch(`${API_URL}/api/messages`);
                 const messages = await response.json();
                 
                 const messagesContainer = document.getElementById('messages-list');
