@@ -8,7 +8,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://rajkoli145.github.io']
+    origin: ['http://localhost:3000', 'https://rajkoli145.github.io', 'https://portfolio1-b7i9.onrender.com'],
+    methods: ['GET', 'POST'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Accept']
 }));
 app.use(express.json());
 app.use(express.static(__dirname)); // Serve files from root directory
